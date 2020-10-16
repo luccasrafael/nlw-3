@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'react-native';
-import MapView, { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
-import { Feather } from '@expo/vector-icons'
+import { StatusBar } from 'react-native'
 import { useFonts } from 'expo-font'
 import { Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold } from '@expo-google-fonts/nunito'
 
@@ -14,12 +12,15 @@ export default function App() {
     Nunito_800ExtraBold,
   })
 
-  if(!fontsLoaded){
+  if (!fontsLoaded) {
     return null
   }
 
   return (
-    <Routes />
+    <>
+      <StatusBar backgroundColor="transparent" translucent barStyle="dark-content" />
+      <Routes />
+    </>
   );
 }
 
